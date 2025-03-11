@@ -1,0 +1,71 @@
+/* Ensure the table is centered and has a fixed layout */
+table {
+    width: 80%;
+    margin: 0 auto; /* Centers the table */
+    table-layout: fixed; /* Prevents resizing */
+    border-collapse: collapse;
+    border: 1px solid #ccc; /* Adds a border for consistency */
+}
+
+/* Ensure table headers and cells have a fixed width */
+th, td {
+    width: 20%; /* Adjust based on the number of columns */
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." if text is too long */
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Ensures all table rows are of consistent height */
+td {
+    min-height: 40px; /* Uniform row height */
+}
+
+/* Styles for buttons */
+button {
+    padding: 10px 15px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px; /* Makes text more readable */
+    transition: background-color 0.3s, transform 0.2s; /* Adds smooth hover effects */
+}
+
+/* Hover effect */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Active (clicked) effect */
+button:active {
+    background-color: #004494;
+    transform: scale(0.98); /* Slight shrink effect on click */
+}
+
+/* Disabled button style */
+button:disabled {
+    background-color: #c0c0c0;
+    cursor: not-allowed;
+}
+
+/* Ensure search form aligns properly */
+#searchItemForm {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#searchItem {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#searchItemForm button {
+    padding: 8px 12px;
+}

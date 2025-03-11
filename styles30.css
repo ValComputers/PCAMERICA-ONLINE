@@ -1,0 +1,1225 @@
+/* styles.css */
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            width: 950px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            border: 2px solid #ccc;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h2 {
+            color: black;
+            text-align: left;
+            font-size: 1.5rem;
+            padding: 0;
+            margin: 0 0 5px 0; /* Add margin to reduce space below the title */
+        }
+
+        .item-section {
+            background-color: #fdfd77;
+            padding: 5px;  /* Reduce padding for smaller height */
+            font-size: 1rem; /* Make font slightly smaller */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px; /* Increase space between title and yellow bar */
+            margin-bottom: 20px;
+        }
+
+        .item-section .item-label {
+            font-weight: bold;
+            color: black;
+        }
+
+        .item-section .item-value {
+            color: black;
+            margin-left: 0px;
+        }
+
+        .buttons-section {
+            display: flex;
+            gap: 5px; /* Reduce gap between buttons */
+        }
+
+        /* Print Labels Button */
+        .btn-print {
+           padding: 5px 10px; /* Reduce padding to make buttons smaller */
+           font-size: 0.8rem; /* Smaller font size for buttons */
+           border: 1px solid #808080;
+           border-radius: 5px;
+           cursor: pointer;
+           background-color: #c3b7e9; /* Print Labels button color */
+           color: white; /* Text color for Print Labels button */
+           transition: background-color 0.3s ease;
+        }
+
+        .btn-print:hover {
+           background-color: #a89ec9; /* Hover color for Print Labels button */
+        }
+
+        /* Keyboard Button */
+        .btn-keyboard {
+           padding: 5px 10px; /* Reduce padding to make buttons smaller */
+           font-size: 0.8rem; /* Smaller font size for buttons */
+           border: 1px solid #808080;
+           border-radius: 5px;
+           cursor: pointer;
+           background-color: #28a745; /* Keyboard button color */
+           color: white; /* Text color for Keyboard button */
+           transition: background-color 0.3s ease;
+        }
+
+        .btn-keyboard:hover {
+           background-color: #006400; /* Hover color for Keyboard button */
+        }
+
+        /* Smaller Tab Style */
+        .tab {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+            font-size: 0.8rem;
+        }
+
+        .tab button {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+            font-weight: bold;
+        }
+
+        /* Hide content sections by default */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        /* Apply styling only to text inputs and select dropdowns */
+        input[type="text"], input[type="number"] {
+            width: 190px;
+            padding: 5px;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+        }
+
+        select {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+        }
+
+        /* Main container for inline-group (left section) and tax-section (right section) */
+        .main-container {
+            display: flex;
+            gap: 40px; /* Add space between the two sections */
+            align-items: flex-start; /* Align sections at the top */
+        }
+
+        /* Inline group */
+        .inline-group {
+            display: flex;
+            gap: 40px; /* Space between the two form columns */
+        }
+
+        /* Tax Section items static */
+        /* Tax Section */
+        .tax-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            column-gap: -10px; /* Reduce the space between the columns */
+            row-gap: 25px; /* Maintain spacing between rows */
+            align-items: center;
+        }
+
+        .tax-checkbox-group {
+            display: flex;
+            align-items: center;
+            width: 200px; /* Fixed width for consistency */
+        }
+
+        .tax-checkbox-group input[type="checkbox"] {
+            margin-right: 10px; /* Space between checkbox and label */
+        }
+
+        .tax-checkbox-group label {
+            width: 120px; /* Fixed width for the labels to ensure they are static */
+            text-align: left; /* Align text to the left for better readability */
+            white-space: nowrap; /* Prevent wrapping of label text */
+            overflow: hidden; /* Ensure long text does not overflow */
+            text-overflow: ellipsis; /* Add ellipsis for overflow text */
+        }
+
+
+        /* Styling for the Fixed Tax input */
+        .fixed-tax-group {
+            display: flex;
+            align-items: center; /* Align label and input vertically */
+            justify-content: left; /* Center the label and input horizontally */
+            grid-column: span 2; /* Make it span both columns */
+            margin-top: 10px; /* Add spacing above Fixed Tax */
+        }
+
+        .fixed-tax-group label {
+            margin-right: 10px; /* Space between label and input */
+            font-weight: bold; /* Optional: make the label stand out */
+        }
+
+        .fixed-tax-group input[type="number"] {
+            width: 80px; /* Adjust input width */
+            padding: 5px;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+        }
+
+        /* Additional safeguards to prevent layout shifts */
+        .tax-container {
+            display: grid;
+            grid-template-columns: auto auto; /* Ensure consistent alignment for labels and checkboxes */
+            column-gap: 20px; /* Space between columns */
+            row-gap: 10px; /* Space between rows */
+            align-items: center;
+        }
+
+        /* Specific styling for text areas (Alt SKU, Tag Along, etc.) */
+        textarea {
+            width: 150px;
+            padding: 5px;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+        }
+
+        /* Custom Fields Specific Inline Group */
+        .custom-inline-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Align items to the top */
+        }
+
+        .inline-group {
+            display: flex;
+            justify-content: space-between;
+        }        
+
+        .form-column {
+            width: 32%;
+        }
+        
+        .form-column2 {
+            width: 25%;
+        }
+
+        .form-column3 {
+            width: 22%;
+        }
+
+        .middle-section {
+            margin-top: 20px;
+        }
+
+        .left-column {
+            width: 48%;
+        }
+
+        .right-column {
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .input-row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .input-row label {
+            width: 100px;
+            margin-right: 10px;
+            text-align: left;
+        }
+
+        /* Adjusting the layout of Alternate SKUs and Tag Along Items */
+        .tag-group-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-left: -70px; /* Move both tag-groups closer to the left by 20px */
+        }
+
+        .tag-group {
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        textarea {
+            width: 100%;
+            height: 60px;
+            resize: none;
+        }
+
+        /* Styling for Add and Delete buttons */
+        .tag-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+
+        .tag-buttons button {
+            width: 45%;
+            padding: 5px;
+            font-size: 0.8rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tag-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .tag-buttons .delete-btn {
+            background-color: #dc3545;
+        }
+
+        .tag-buttons .delete-btn:hover {
+            background-color: #c82333;
+        }
+
+        /* Inline styling specific for Regular Fields tab */
+        .form-group.inline-regular {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            margin-right: -20px;
+        }
+
+        .form-group.inline-regular span {
+            margin-left: 10px; /* Adjust spacing between the input and text */
+            font-weight: bold;
+        }
+
+        .form-group.inline-regular label {
+            width: 120px; /* Adjust label width as needed */
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .form-group.inline-regular input[type="text"],
+        .form-group.inline-regular input[type="number"],
+        .form-group.inline-regular textarea {
+            width: 165px; /* Adjust width to fit next to the label */
+            padding: 5px;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+        }
+
+        .extended-group {
+            display: block; /* Ensure block layout */
+            width: 100%;    /* Optional: Adjust width as needed */
+            margin-bottom: 15px;
+        }
+    
+        .extended-group textarea {
+            height: 100px; /* Adjust height as desired */
+            width:  290px;    /* Optional: Adjust width as needed */
+            resize: none;
+            overflow-y: scroll; /* Enable vertical scrolling */
+        }
+
+        .extended-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem; /* Adjust font size to match other labels */
+        }
+
+        /* Styling for right-aligned checkbox column */
+        .checkbox-column2 {
+            width: 140px; /* Adjust width as necessary */
+            margin-left: 120px; /* Align to the right */
+        }
+
+        .checkbox-group2 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            width: 150%;
+            margin-left: -130px; /* Align checkboxes closer to the left to match the tag-groups */
+        }
+
+        .checkbox-group2 input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        /* Unique styling for Custom Fields section */
+        .custom-fields-column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .custom-fields-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .custom-fields-group label {
+            width: 150px; /* Adjust width to align labels */
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .custom-fields-group input[type="number"],
+        .custom-fields-group input[type="text"] {
+            width: 125px;
+            padding: 6px; /* Increase padding to make the input height larger */
+            border: 1px solid #aaa;
+            border-radius: 3px;
+        }
+
+        /* Adjust textarea and label for Custom Extended Text */
+        .custom-fields-group textarea {
+            width: 150px;
+            height:100px; /* Increase height */
+            resize: none;
+            overflow-y: auto;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+            margin-left: -15px; /* Move the textarea slightly to the left */
+        }
+
+        .custom-fields-extended-label {
+            font-weight: bold;
+            line-height: 1.2; /* Control spacing between lines */
+            text-align: right;
+            width: 175px;
+            padding-right: 10px;
+            margin-left: -30px; /* Move the label slightly to the left */
+        }
+
+        /* Checkbox styling */
+        .checkboxes-right {
+            display: grid;
+            grid-template-columns: 175px 125px 125px; /* Set custom widths for each column */
+            grid-auto-rows: auto; /* Automatically adjust the height of rows */
+            column-gap: 60px; /* Adjust the space between columns, you can change the value */
+            row-gap: 10px; /* Space between rows */
+            margin-top: 15px;
+            width: 100%; /* Make sure the grid container fills the full section width */
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            width: 150%;
+            margin-left: -130px; /* Align checkboxes closer to the left to match the tag-groups */
+        }
+        
+        /* Ensuring the last column has only 4         checkboxes */
+        .checkbox-group:nth-child(14) {
+           grid-column: 2 / span 1; /* Force the         last checkbox into the third column */
+        }
+
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+
+        .bottom-section {
+            margin-top: 30px;
+        }
+
+        .bottom-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .left-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .left-buttons button {
+            width: 120px;
+            height: 45px;
+            background-color: #c3b7e9;
+            border: none;
+            color: black;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .left-buttons button:hover {
+            background-color: #a89ec9;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .right-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .right-buttons .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .right-buttons button {
+            width: 120px;
+            height: 45px;
+            border: none;
+            color: white;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-green {
+            background-color: #28a745;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-blue {
+            background-color: #007bff;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-purple {
+            background-color: #6f42c1;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-red {
+            background-color: #dc3545;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-yellow {
+            background-color: #ffc107;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+            color: black;
+        }
+
+        .btn-yellow:hover {
+            background-color: #e0a800;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-orange {
+            background-color: #fd7e14;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-orange:hover {
+            background-color: #e36910;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-boxes {
+            display: flex;
+            justify-content: right; /* Align in the center */
+            gap: 40px; /* Adjust spacing between info boxes */
+            margin-bottom: 10px;
+        }
+
+        .info-box {
+            text-align: center;
+            width: 175px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .search-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .search-box input {
+            width: 370px;
+            height: 40px;
+            font-size: 1rem;
+            padding-left: 5px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-group3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    
+        .form-group3 input[type="checkbox"],
+        .form-group3 input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .form-group3 label {
+            margin: 0;
+        }
+
+        /* Style for the popup keyboard */
+#keyboardPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 750px;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.key-button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Colors based on the photo */
+.number-button {
+    background-color: #4a90e2; /* Blue for numbers */
+    color: white;
+}
+
+.letter-button {
+    background-color: #ffecb3; /* Yellow for letters */
+    color: black;
+}
+
+.function-button {
+    background-color: #ff6f61; /* Red for function buttons */
+    color: white;
+}
+
+.enter-button, .shift-button, .space-button {
+    background-color: #ffa500; /* Orange for Enter, Shift, and Space */
+    color: white;
+    font-size: 1em;
+}
+
+/* Adjust sizes for Shift, Enter, and Space buttons (10% larger) */
+.shift-button, .enter-button {
+    width: 150px; /* 10% increase */
+    height: 60px;
+    margin: 5px; /* Center align with even spacing */
+}
+
+.space-button {
+    width: 220px; /* 10% increase */
+    height: 60px;
+    margin: 5px;
+}
+
+#keyboardInputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#keyboardInputLabel {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    display: block;
+}
+
+#keyboardInput {
+    width: 70%;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-right: 10px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    text-align: left;
+}
+
+.back-button {
+    width: 80px;
+    height: 50px;
+    background-color: #ff6f61;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 3px; /* Space between Back and Close */
+}
+
+/* Light blue color for the , . / ; buttons */
+.symbol-button[data-key=","],
+.symbol-button[data-key="."],
+.symbol-button[data-key="/"],
+.symbol-button[data-key=";"] {
+    background-color: lightblue;
+    color: black;
+    border: 1px solid #007BFF; /* Optional: adds a border for more contrast */
+}
+
+    /* Purple color for the Close button */
+    .close-button {
+    width: 80px;
+    height: 50px;
+    background-color: purple;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 3px; /* Space between Back and Close */
+}
+
+
+    #inventoryModal {
+    display: none;
+    position: fixed;
+    top: 2%; /* Adjust vertical position */
+    left: 50%; /* Keep centered horizontally */
+    transform: translateX(-50%); /* Only center horizontally */
+    width: 1250px;
+    height: 605px;
+    background-color: #d1dbe5;
+    border: 3px solid #000;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+    /* Modal Header */
+    #inventoryModal #inventoryModalHeader {
+    padding: 10px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+    /* Modal Content */
+    #inventoryModal #inventoryModalContent {
+    display: flex;
+    height: calc(100% - 160px);
+}
+
+    /* Table Container */
+#inventoryModal #inventoryTableContainer {
+    width: 80%;
+    background-color: #b0c4de;
+    overflow-y: auto; /* Hides the scroll bar unless it is needed */
+    border-right: 2px solid #000;
+    max-height: 500px; /* Set a max-height as needed */
+}
+
+    /* Table Styles */
+    #inventoryModal #inventoryTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #dcdcdc;
+}
+
+    #inventoryModal #inventoryTable th {
+    background-color: #ffffff;
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+
+    #inventoryModal #inventoryTable td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
+}
+
+    /* Sidebar Buttons */
+    #inventoryModal #inventorySidebar {
+    width: 20%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: flex-start;
+}
+
+    #inventoryModal #inventorySidebar button {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #4682b4;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+    #inventoryModal #inventorySidebar button:last-child {
+    background-color: #32cd32;
+    font-weight: bold;
+}
+
+    /* Bottom Controls */
+    #inventoryModal .bottom-controls {
+    padding: 10px;
+    background-color: #1e90ff;
+    color: #ffffff;
+    border-top: 2px solid #000;
+    display: flex;
+    flex-direction: column;
+}
+
+    /* Bottom section layout */
+        #inventoryModal .dropdown-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            width: 72%;
+        }
+
+        #inventoryModal .dropdown {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+        }
+    
+        #inventoryModal .dropdown select {
+            width: 225px !important; /* Ensure this width is applied */
+            padding: 5px;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+        }
+
+        #inventoryModal .dropdown label {
+            font-size: 18px;
+            margin-bottom: 3px;
+            color: #ffffff;
+        }
+
+    /* Adjusted Radio Group */
+    #inventoryModal .radio-group {
+    display: flex;
+    justify-content: flex-start; /* Aligns starting from the left */
+    align-items: center;
+    color: #ffffff;
+    margin: 10px 0;
+    gap: 10px; /* Adjusted to bring radio buttons and labels closer */
+}
+
+    #inventoryModal .radio-group label {
+    font-size: 14px;
+}
+
+    /* Action Section */
+    #inventoryModal .action-section {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: -5px;
+}
+
+    /* Search Section */
+    #inventoryModal .search-section {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Adjust space between label and input */
+}
+
+    #inventoryModal .search-section label {
+    font-size: 14px;
+    color: #ffffff; /* Match the modal color scheme */
+    font-weight: bold;
+}
+
+    #inventoryModal .search-section input[type="text"] {
+    padding: 5px;
+    width: 175px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+}
+
+    #inventoryModal .select-btn {
+    background-color: #32cd32; /* Bright green */
+    color: #ffffff;
+    border: none;
+    padding: 8px 15px; /* Adjust padding as needed */
+    font-size: 14px;
+    width: 90px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    #inventoryModal .cancel-btn {
+    background-color: #ffb6c1; /* Light pink */
+    color: #000;
+    border: none;
+    padding: 8px 15px; /* Adjust padding as needed */
+    font-size: 14px;
+    width: 90px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+    #inventoryModal .search-btn {
+    background-color: #add8e6; /* Light blue */
+    color: #000;
+    border: none;
+    padding: 8px 15px; /* Adjust padding as needed */
+    font-size: 14px;
+    width: 90px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    #inventoryModal .help-btn {
+    background-color: #ffffff; /* White */
+    color: #000;
+    border: 1px solid #ccc; /* Border for visual separation */
+    padding: 8px 15px; /* Adjust padding as needed */
+    font-size: 14px;
+    width: 90px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    #customExtendedText1, #customExtendedText2 {
+    width: 200px; /* Adjust the width as needed */
+    max-width: 100%; /* Ensure it doesn't exceed the container */
+}
+
+    #avgCost, #priceCharge, #priceTax, #inStock {
+    width: 120px; /* Adjust the width as needed */
+    text-align: right;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+    #priority, #rating, #promptDescriptionOver, #limitQtyOnInvoice, #bonusPoints, #barcodes, #fixedTax, #daysValid, #customNumber1, #customNumber2, #customNumber3, #customNumber4, #customNumber5 {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+/* Styles specific to the ErrorModal */
+#errorModal.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+}
+
+#errorModal .modal-content {
+    background-color: #ff0000; /* Red background */
+    color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 3px solid #800000; /* Dark red (maroon) border */
+    width: 25%; /* Half the original width (50% to 25%) */
+    text-align: center;
+    border-radius: 20px; /* More rounded edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better visual appearance */
+}
+
+#errorModal .modal-content h2 {
+    margin: 0 0 15px;
+    font-size: 24px;
+}
+
+#errorModal .modal-content p {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+#errorModal .modal-content button {
+    background-color: #ffffff; /* White background */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px; /* Rounder button edges */
+    text-transform: uppercase;
+}
+
+#errorModal .modal-content button:hover {
+    background-color: #dddddd; /* Light gray background on hover */
+}
+
+#errorModal .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#errorModal .close:hover {
+    color: #ccc;
+}
+
+/* Default background color for fields */
+        .normal {
+            background-color: white;
+        }
+        /* Highlight background color for changed fields */
+        .highlight {
+            background-color: #ffccd5; /* Pastel pink */
+        }
+        /* Highlight for checkbox label */
+        .highlight-label {
+            color: #ff0000; /* Red */
+            font-weight: bold;
+        }
+        /* Normal checkbox label */
+        .normal-label {
+            color: black;
+            font-weight: bold;
+        }
+
+        .line {
+            cursor: pointer;
+            padding: 2px; /* Reduce padding to make lines more compact */
+            border-bottom: none;
+            font-size: 14px; /* Optionally reduce font size */
+            line-height: 1.2; /* Reduce line spacing */
+        }
+
+        .line:hover {
+            background-color: #9dfd82;
+        }
+
+        .highlighted {
+            background-color: #9dfd82;
+        }
+
+        .line-container {
+            border: 1px solid #ccc;
+            width: 230px; /* Approximate width for 30 columns */
+            height: 73px; /* Height for 5 rows */
+            overflow-y: auto;
+            padding: 5px;
+            box-sizing: border-box;
+            background-color: #f9f9f9; /* Light gray background for visibility */
+            border-radius: 3px; /* Rounds the edges with a 10px radius */
+        }
+
+/* Styles specific to the AltTagPopup */
+#AltTagPopup.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+}
+
+#AltTagPopup .modal-content {
+    background-color: #ff0000; /* Red background */
+    color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 3px solid #800000; /* Dark red (maroon) border */
+    width: 25%; /* Half the original width (50% to 25%) */
+    text-align: center;
+    border-radius: 20px; /* More rounded edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better visual appearance */
+}
+
+#AltTagPopup .modal-content h2 {
+    margin: 0 0 15px;
+    font-size: 24px;
+}
+
+#AltTagPopup .modal-content p {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+#AltTagPopup .modal-content button {
+    background-color: #ffffff; /* White background */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px; /* Rounder button edges */
+    text-transform: uppercase;
+}
+
+#AltTagPopup .modal-content button:hover {
+    background-color: #dddddd; /* Light gray background on hover */
+}
+
+#AltTagPopup .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#AltTagPopup .close:hover {
+    color: #ccc;
+}
+
+/* Styling read-only fields */
+    input[readonly] {
+        background-color: #b0c4de; /* Light gray background */
+        border: 1px solid #ccc; /* Light border */
+        color: #333; /* Darker text color for distinction */
+        cursor: not-allowed; /* Show 'not-allowed' cursor */
+    }
+
+/* Modal Background */
+    .pomodal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    }
+
+    /* Modal Content */
+    .pomodal-content {
+        background-color: white;
+        margin: 10% auto; /* Center it */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 40%;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    /* Input Field Styling */
+    .styled-input {
+        width: 80%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .styled-input:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+    /* Button Styling */
+    .btn-orange {
+        background-color: #ffa500; /* Orange color */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn-orange:hover {
+        background-color: #ff8c00;
+    }
+
+    .btn-red {
+        background-color: #ff4c4c; /* Red color */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn-red:hover {
+        background-color: #ff0000;
+    }
